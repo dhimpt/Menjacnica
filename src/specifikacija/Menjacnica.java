@@ -4,8 +4,8 @@ import menjacnica.Kurs;
 
 public interface Menjacnica {
 
-	public boolean dodajKursValute();
-	public boolean obrisiKursValute();
-	public Kurs vratiKursValute();
+	public boolean dodajKursValute(String puniNazivValute, String skraceniNazivValute, Kurs kursValute);
+	public boolean obrisiKursValute(String puniNazivValute, String skraceniNazivValute, Kurs kursValute);
+	public Kurs vratiKursValute(String puniNazivValute, String skraceniNazivValute);
 	
 }
