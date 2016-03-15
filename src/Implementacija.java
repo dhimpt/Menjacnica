@@ -13,32 +13,32 @@ public class Implementacija extends Poslovnica implements Menjacnica {
 	}
 
 	@Override
-	public boolean dodajKursValute(String puniNazivValute, String skraceniNazivValute, Kurs kursValute) {
+	public boolean dodajKursValute(String punNazivValute, String skraceniNazivValute, Kurs kursValute) {
 
-		if (puniNazivValute == null || skraceniNazivValute == null
-				|| getValute().contains(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
+		if (punNazivValute == null || skraceniNazivValute == null
+				|| getValute().contains(new Valuta(punNazivValute, skraceniNazivValute, kursValute)))
 			return false;
-		if (getValute().add(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
+		if (getValute().add(new Valuta(punNazivValute, skraceniNazivValute, kursValute)))
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean obrisiKursValute(String puniNazivValute, String skraceniNazivValute, Kurs kursValute) {
-		if (puniNazivValute == null || skraceniNazivValute == null
-				|| !getValute().contains(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
+	public boolean obrisiKursValute(String punNazivValute, String skraceniNazivValute, Kurs kursValute) {
+		if (punNazivValute == null || skraceniNazivValute == null
+				|| !getValute().contains(new Valuta(punNazivValute, skraceniNazivValute, kursValute)))
 			return false;
-		if (getValute().remove(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
+		if (getValute().remove(new Valuta(punNazivValute, skraceniNazivValute, kursValute)))
 			return true;
 		return false;
 	}
 
 	@Override
-	public Kurs vratiKursValute(String puniNazivValute, String skraceniNazivValute) {
-		if (puniNazivValute == null || skraceniNazivValute == null)
+	public Kurs vratiKursValute(String punNazivValute, String skraceniNazivValute) {
+		if (punNazivValute == null || skraceniNazivValute == null)
 			return null;
 		for (int i = 0; i < getValute().size(); i++) {
-			if (getValute().get(i).getPunNaziv().equals(puniNazivValute)
+			if (getValute().get(i).getPunNaziv().equals(punNazivValute)
 					&& getValute().get(i).getSkraceniNaziv().equals(skraceniNazivValute))
 				return getValute().get(i).getKursValute();
 		}

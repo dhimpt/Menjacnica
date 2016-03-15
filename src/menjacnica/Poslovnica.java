@@ -3,20 +3,20 @@ package menjacnica;
 import java.util.LinkedList;
 
 public class Poslovnica {
-	private LinkedList<Valuta> valute;
+	private LinkedList<Valuta> listaValute;
 
 	public Poslovnica(LinkedList<Valuta> valute) {
 		super();
-		this.valute = valute;
+		this.listaValute = valute;
 	}
 
 	public LinkedList<Valuta> getValute() {
-		return valute;
+		return listaValute;
 	}
 
 	public void setValute(LinkedList<Valuta> valute) {
 		if (valute != null)
-			this.valute = valute;
+			this.listaValute = valute;
 		else
 			throw new RuntimeException("Prosledjena je nepostojeca (null) lista");
 	}
@@ -25,7 +25,7 @@ public class Poslovnica {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((valute == null) ? 0 : valute.hashCode());
+		result = prime * result + ((listaValute == null) ? 0 : listaValute.hashCode());
 		return result;
 	}
 
@@ -38,17 +38,17 @@ public class Poslovnica {
 		if (getClass() != obj.getClass())
 			return false;
 		Poslovnica other = (Poslovnica) obj;
-		if (valute == null) {
-			if (other.valute != null)
+		if (listaValute == null) {
+			if (other.listaValute != null)
 				return false;
-		} else if (!valute.equals(other.valute))
+		} else if (!listaValute.equals(other.listaValute))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Menjacnica [valute=" + valute + "]";
+		return "Menjacnica [valute=" + listaValute + "]";
 	}
 
 }

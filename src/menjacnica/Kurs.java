@@ -3,59 +3,59 @@ package menjacnica;
 import java.util.GregorianCalendar;
 
 public class Kurs {
-	private double prodajniKurs;
-	private double kupovniKurs;
-	private double srednjiKurs;
-	GregorianCalendar datumKursa;
+	private double vrednostProdajnogKursa;
+	private double vrednostKupovnogKursa;
+	private double vrednostSrednjegKursa;
+	GregorianCalendar datumPoslednjegAzuriranjaKursa;
 
 	public Kurs(int prodajniKurs, int kupovniKurs, int srednjiKurs, GregorianCalendar datumKursa) {
 		super();
-		this.prodajniKurs = prodajniKurs;
-		this.kupovniKurs = kupovniKurs;
-		this.srednjiKurs = srednjiKurs;
-		this.datumKursa = datumKursa;
+		this.vrednostProdajnogKursa = prodajniKurs;
+		this.vrednostKupovnogKursa = kupovniKurs;
+		this.vrednostSrednjegKursa = srednjiKurs;
+		this.datumPoslednjegAzuriranjaKursa = datumKursa;
 	}
 
 	public double getProdajniKurs() {
-		return prodajniKurs;
+		return vrednostProdajnogKursa;
 	}
 
-	public void setProdajniKurs(int prodajniKurs) {
-		if (prodajniKurs >= 0)
-			this.prodajniKurs = prodajniKurs;
+	public void setProdajniKurs(int vrednostProdajnogKursa) {
+		if (vrednostProdajnogKursa >= 0)
+			this.vrednostProdajnogKursa = vrednostProdajnogKursa;
 		else
 			throw new RuntimeException("Prodajni kurs ne sme biti negativan");
 	}
 
 	public double getKupovniKurs() {
-		return kupovniKurs;
+		return vrednostKupovnogKursa;
 	}
 
-	public void setKupovniKurs(int kupovniKurs) {
-		if (kupovniKurs >= 0)
-			this.kupovniKurs = kupovniKurs;
+	public void setKupovniKurs(int vrednostKupovnogKursa) {
+		if (vrednostKupovnogKursa >= 0)
+			this.vrednostKupovnogKursa = vrednostKupovnogKursa;
 		else
 			throw new RuntimeException("Kupovni kurs ne sme biti negativan");
 	}
 
 	public double getSrednjiKurs() {
-		return srednjiKurs;
+		return vrednostSrednjegKursa;
 	}
 
-	public void setSrednjiKurs(int srednjiKurs) {
-		if (srednjiKurs >= 0)
-			this.srednjiKurs = srednjiKurs;
+	public void setSrednjiKurs(int vrednostSrednjegKursa) {
+		if (vrednostSrednjegKursa >= 0)
+			this.vrednostSrednjegKursa = vrednostSrednjegKursa;
 		else
 			throw new RuntimeException("Srednji kurs ne sme biti negativan");
 	}
 
 	public GregorianCalendar getDatumKursa() {
-		return datumKursa;
+		return datumPoslednjegAzuriranjaKursa;
 	}
 
-	public void setDatumKursa(GregorianCalendar datumKursa) {
-		if (datumKursa.after(new GregorianCalendar()))
-			this.datumKursa = datumKursa;
+	public void setDatumKursa(GregorianCalendar datumPoslednjegAzuriranjaKursa) {
+		if (datumPoslednjegAzuriranjaKursa.after(new GregorianCalendar()))
+			this.datumPoslednjegAzuriranjaKursa = datumPoslednjegAzuriranjaKursa;
 		else
 			throw new RuntimeException("Uneti datum kursa ne sme bti pre danasnjeg datuma");
 	}
@@ -64,13 +64,13 @@ public class Kurs {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((datumKursa == null) ? 0 : datumKursa.hashCode());
+		result = prime * result + ((datumPoslednjegAzuriranjaKursa == null) ? 0 : datumPoslednjegAzuriranjaKursa.hashCode());
 		long temp;
-		temp = Double.doubleToLongBits(kupovniKurs);
+		temp = Double.doubleToLongBits(vrednostKupovnogKursa);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(prodajniKurs);
+		temp = Double.doubleToLongBits(vrednostProdajnogKursa);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(srednjiKurs);
+		temp = Double.doubleToLongBits(vrednostSrednjegKursa);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
@@ -84,24 +84,24 @@ public class Kurs {
 		if (getClass() != obj.getClass())
 			return false;
 		Kurs other = (Kurs) obj;
-		if (datumKursa == null) {
-			if (other.datumKursa != null)
+		if (datumPoslednjegAzuriranjaKursa == null) {
+			if (other.datumPoslednjegAzuriranjaKursa != null)
 				return false;
-		} else if (!datumKursa.equals(other.datumKursa))
+		} else if (!datumPoslednjegAzuriranjaKursa.equals(other.datumPoslednjegAzuriranjaKursa))
 			return false;
-		if (Double.doubleToLongBits(kupovniKurs) != Double.doubleToLongBits(other.kupovniKurs))
+		if (Double.doubleToLongBits(vrednostKupovnogKursa) != Double.doubleToLongBits(other.vrednostKupovnogKursa))
 			return false;
-		if (Double.doubleToLongBits(prodajniKurs) != Double.doubleToLongBits(other.prodajniKurs))
+		if (Double.doubleToLongBits(vrednostProdajnogKursa) != Double.doubleToLongBits(other.vrednostProdajnogKursa))
 			return false;
-		if (Double.doubleToLongBits(srednjiKurs) != Double.doubleToLongBits(other.srednjiKurs))
+		if (Double.doubleToLongBits(vrednostSrednjegKursa) != Double.doubleToLongBits(other.vrednostSrednjegKursa))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Kurs [prodajniKurs=" + prodajniKurs + ", kupovniKurs=" + kupovniKurs + ", srednjiKurs=" + srednjiKurs
-				+ ", datumKursa=" + datumKursa + "]";
+		return "Kurs [prodajniKurs=" + vrednostProdajnogKursa + ", kupovniKurs=" + vrednostKupovnogKursa + ", srednjiKurs=" + vrednostSrednjegKursa
+				+ ", datumKursa=" + datumPoslednjegAzuriranjaKursa + "]";
 	}
 
 }

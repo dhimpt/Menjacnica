@@ -1,46 +1,46 @@
 package menjacnica;
 
 public class Valuta {
-	private String punNaziv;
-	private String skraceniNaziv;
-	Kurs kursValute;
+	private String punNazivValute;
+	private String skraceniNazivValute;
+	Kurs trenutniKursValute;
 
 	public Valuta(String punNaziv, String skraceniNaziv, Kurs kursValute) {
 		super();
-		this.punNaziv = punNaziv;
-		this.skraceniNaziv = skraceniNaziv;
-		this.kursValute = kursValute;
+		this.punNazivValute = punNaziv;
+		this.skraceniNazivValute = skraceniNaziv;
+		this.trenutniKursValute = kursValute;
 	}
 
 	public String getPunNaziv() {
-		return punNaziv;
+		return punNazivValute;
 	}
 
-	public void setPunNaziv(String punNaziv) {
-		if (punNaziv.matches("[a-zA-Z]+"))
-			this.punNaziv = punNaziv;
+	public void setPunNaziv(String punNazivValute) {
+		if (punNazivValute.matches("[a-zA-Z]+"))
+			this.punNazivValute = punNazivValute;
 		else
 			throw new RuntimeException("Pun naziv valute moze sadrzati samo slova");
 	}
 
 	public String getSkraceniNaziv() {
-		return skraceniNaziv;
+		return skraceniNazivValute;
 	}
 
-	public void setSkraceniNaziv(String skraceniNaziv) {
-		if (skraceniNaziv.matches("[a-zA-Z]+"))
-			this.skraceniNaziv = skraceniNaziv;
+	public void setSkraceniNaziv(String skraceniNazivValute) {
+		if (skraceniNazivValute.matches("[a-zA-Z]+"))
+			this.skraceniNazivValute = skraceniNazivValute;
 		else
 			throw new RuntimeException("Skraceni naziv valute moze sadrzati samo slova");
 	}
 
 	public Kurs getKursValute() {
-		return kursValute;
+		return trenutniKursValute;
 	}
 
-	public void setKursValute(Kurs kursValute) {
-		if (kursValute != null)
-			this.kursValute = kursValute;
+	public void setKursValute(Kurs trenutniKursValute) {
+		if (trenutniKursValute != null)
+			this.trenutniKursValute = trenutniKursValute;
 		else
 			throw new RuntimeException("Kurs valute ne sme biti null");
 	}
@@ -49,9 +49,9 @@ public class Valuta {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((kursValute == null) ? 0 : kursValute.hashCode());
-		result = prime * result + ((punNaziv == null) ? 0 : punNaziv.hashCode());
-		result = prime * result + ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
+		result = prime * result + ((trenutniKursValute == null) ? 0 : trenutniKursValute.hashCode());
+		result = prime * result + ((punNazivValute == null) ? 0 : punNazivValute.hashCode());
+		result = prime * result + ((skraceniNazivValute == null) ? 0 : skraceniNazivValute.hashCode());
 		return result;
 	}
 
@@ -65,22 +65,22 @@ public class Valuta {
 			return false;
 		Valuta other = (Valuta) obj;
 		
-		if (punNaziv == null) {
-			if (other.punNaziv != null)
+		if (punNazivValute == null) {
+			if (other.punNazivValute != null)
 				return false;
-		} else if (!punNaziv.equals(other.punNaziv))
+		} else if (!punNazivValute.equals(other.punNazivValute))
 			return false;
-		if (skraceniNaziv == null) {
-			if (other.skraceniNaziv != null)
+		if (skraceniNazivValute == null) {
+			if (other.skraceniNazivValute != null)
 				return false;
-		} else if (!skraceniNaziv.equals(other.skraceniNaziv))
+		} else if (!skraceniNazivValute.equals(other.skraceniNazivValute))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Valuta [punNaziv=" + punNaziv + ", skraceniNaziv=" + skraceniNaziv + ", kursValute=" + kursValute + "]";
+		return "Valuta [punNaziv=" + punNazivValute + ", skraceniNaziv=" + skraceniNazivValute + ", kursValute=" + trenutniKursValute + "]";
 	}
 
 }
