@@ -64,11 +64,7 @@ public class Valuta {
 		if (getClass() != obj.getClass())
 			return false;
 		Valuta other = (Valuta) obj;
-		if (kursValute == null) {
-			if (other.kursValute != null)
-				return false;
-		} else if (!kursValute.equals(other.kursValute))
-			return false;
+		
 		if (punNaziv == null) {
 			if (other.punNaziv != null)
 				return false;

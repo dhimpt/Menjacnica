@@ -15,7 +15,8 @@ public class Implementacija extends Poslovnica implements Menjacnica {
 	@Override
 	public boolean dodajKursValute(String puniNazivValute, String skraceniNazivValute, Kurs kursValute) {
 
-		if (puniNazivValute == null || skraceniNazivValute == null)
+		if (puniNazivValute == null || skraceniNazivValute == null
+				|| getValute().contains(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
 			return false;
 		if (getValute().add(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
 			return true;
@@ -24,7 +25,8 @@ public class Implementacija extends Poslovnica implements Menjacnica {
 
 	@Override
 	public boolean obrisiKursValute(String puniNazivValute, String skraceniNazivValute, Kurs kursValute) {
-		if (puniNazivValute == null || skraceniNazivValute == null)
+		if (puniNazivValute == null || skraceniNazivValute == null
+				|| !getValute().contains(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
 			return false;
 		if (getValute().remove(new Valuta(puniNazivValute, skraceniNazivValute, kursValute)))
 			return true;
