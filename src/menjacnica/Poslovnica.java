@@ -2,10 +2,10 @@ package menjacnica;
 
 import java.util.LinkedList;
 
-public class Menjacnica {
+public class Poslovnica {
 	private LinkedList<Valuta> valute;
 
-	public Menjacnica(LinkedList<Valuta> valute) {
+	public Poslovnica(LinkedList<Valuta> valute) {
 		super();
 		this.valute = valute;
 	}
@@ -37,7 +37,7 @@ public class Menjacnica {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Menjacnica other = (Menjacnica) obj;
+		Poslovnica other = (Poslovnica) obj;
 		if (valute == null) {
 			if (other.valute != null)
 				return false;
