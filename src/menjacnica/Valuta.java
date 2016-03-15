@@ -17,7 +17,10 @@ public class Valuta {
 	}
 
 	public void setPunNaziv(String punNaziv) {
-		this.punNaziv = punNaziv;
+		if (punNaziv.matches("[a-zA-Z]+"))
+			this.punNaziv = punNaziv;
+		else
+			throw new RuntimeException("Pun naziv valute moze sadrzati samo slova");
 	}
 
 	public String getSkraceniNaziv() {
@@ -25,7 +28,10 @@ public class Valuta {
 	}
 
 	public void setSkraceniNaziv(String skraceniNaziv) {
-		this.skraceniNaziv = skraceniNaziv;
+		if (skraceniNaziv.matches("[a-zA-Z]+"))
+			this.skraceniNaziv = skraceniNaziv;
+		else
+			throw new RuntimeException("Skraceni naziv valute moze sadrzati samo slova");
 	}
 
 	public Kurs getKursValute() {
@@ -33,7 +39,10 @@ public class Valuta {
 	}
 
 	public void setKursValute(Kurs kursValute) {
-		this.kursValute = kursValute;
+		if (kursValute != null)
+			this.kursValute = kursValute;
+		else
+			throw new RuntimeException("Kurs valute ne sme biti null");
 	}
 
 	@Override

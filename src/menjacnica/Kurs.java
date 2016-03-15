@@ -21,7 +21,10 @@ public class Kurs {
 	}
 
 	public void setProdajniKurs(int prodajniKurs) {
-		this.prodajniKurs = prodajniKurs;
+		if (prodajniKurs >= 0)
+			this.prodajniKurs = prodajniKurs;
+		else
+			throw new RuntimeException("Prodajni kurs ne sme biti negativan");
 	}
 
 	public double getKupovniKurs() {
@@ -29,7 +32,10 @@ public class Kurs {
 	}
 
 	public void setKupovniKurs(int kupovniKurs) {
-		this.kupovniKurs = kupovniKurs;
+		if (kupovniKurs >= 0)
+			this.kupovniKurs = kupovniKurs;
+		else
+			throw new RuntimeException("Kupovni kurs ne sme biti negativan");
 	}
 
 	public double getSrednjiKurs() {
@@ -37,7 +43,10 @@ public class Kurs {
 	}
 
 	public void setSrednjiKurs(int srednjiKurs) {
-		this.srednjiKurs = srednjiKurs;
+		if (srednjiKurs >= 0)
+			this.srednjiKurs = srednjiKurs;
+		else
+			throw new RuntimeException("Srednji kurs ne sme biti negativan");
 	}
 
 	public GregorianCalendar getDatumKursa() {
@@ -45,7 +54,10 @@ public class Kurs {
 	}
 
 	public void setDatumKursa(GregorianCalendar datumKursa) {
-		this.datumKursa = datumKursa;
+		if (datumKursa.after(new GregorianCalendar()))
+			this.datumKursa = datumKursa;
+		else
+			throw new RuntimeException("Uneti datum kursa ne sme bti pre danasnjeg datuma");
 	}
 
 	@Override
